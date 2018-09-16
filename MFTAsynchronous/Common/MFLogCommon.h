@@ -13,7 +13,7 @@ inline void LogGuidHexa(const GUID& guid, const BOOL bFirst){
 	int iSize = 37;
 	WCHAR pBuffer[37];
 	WCHAR* ppBuffer = pBuffer;
-	// todo : sprintf_s return -1 if error
+	// todo : swprintf_s return -1 if error
 
 	ppBuffer += swprintf_s(ppBuffer, iSize, L"%.8lX-%.4hX-%.4hX-", guid.Data1, guid.Data2, guid.Data3);
 
