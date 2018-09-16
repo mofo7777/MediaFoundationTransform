@@ -4,7 +4,7 @@
 
 ###  Common
 
-todo
+Some helper files used by differents projects.
 
 ### MFTAsynchronousAudio
 
