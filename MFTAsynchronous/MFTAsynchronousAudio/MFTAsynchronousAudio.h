@@ -4,7 +4,7 @@
 #ifndef MFTASYNCHRONOUSAUDIO_H
 #define MFTASYNCHRONOUSAUDIO_H
 
-class CMFTAsynchronousAudio : public IMFTransform, public IMFMediaEventGenerator, public IMFShutdown{
+class CMFTAsynchronousAudio : BaseObject, public IMFTransform, public IMFMediaEventGenerator, public IMFShutdown{
 
 public:
 
