@@ -7,10 +7,6 @@ HMODULE g_hModule;
 
 DEFINE_CLASSFACTORY_SERVER_LOCK
 
-ClassFactoryData g_ClassFactories[] = {{ &CLSID_MFTAsynchronousAudio, CMFTAsynchronousAudio::CreateInstance }};
-
-const DWORD g_numClassFactories = ARRAY_SIZE(g_ClassFactories);
-
 const WCHAR SZ_DECODER_NAME[] = L"Asynchronous Audio Transform";
 
 BOOL APIENTRY DllMain(HANDLE hModule, DWORD ul_reason_for_call, LPVOID /*lpReserved*/){
@@ -67,31 +63,25 @@ STDAPI DllUnregisterServer(){
 
 STDAPI DllGetClassObject(REFCLSID clsid, REFIID riid, void** ppv){
 
-	ClassFactory* pFactory = NULL;
-
 	HRESULT hr = CLASS_E_CLASSNOTAVAILABLE;
 
-	for(DWORD index = 0; index < g_numClassFactories; index++){
+	if(clsid == CLSID_MFTAsynchronousAudio){
 
-		if(*g_ClassFactories[index].pclsid == clsid){
+		ClassFactory* pFactory = NULL;
 
-			pFactory = new (std::nothrow)ClassFactory(g_ClassFactories[index].pfnCreate);
+		pFactory = new (std::nothrow)ClassFactory(CMFTAsynchronousAudio::CreateInstance);
 
-			if(pFactory){
-				hr = S_OK;
-			}
-			else{
-				hr = E_OUTOFMEMORY;
-			}
-			break;
+		if(pFactory){
+
+			hr = pFactory->QueryInterface(riid, ppv);
+
+			SAFE_RELEASE(pFactory);
+		}
+		else{
+
+			hr = E_OUTOFMEMORY;
 		}
 	}
-
-	if(SUCCEEDED(hr)){
-		hr = pFactory->QueryInterface(riid, ppv);
-	}
-
-	SAFE_RELEASE(pFactory);
 
 	return hr;
 }
