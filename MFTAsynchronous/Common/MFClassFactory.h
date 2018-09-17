@@ -95,31 +95,6 @@ public:
 	virtual ~BaseObject(){ ClassFactory::UnlockServer(); }
 };
 
-class RefCountedObject{
-	
-protected:
-	
-	volatile long   m_refCount;
-	
-public:
-	
-	RefCountedObject() : m_refCount(1){}
-	virtual ~RefCountedObject(){ assert(m_refCount == 0); }
-	
-	ULONG AddRef(){ return InterlockedIncrement(&m_refCount); }
-	ULONG Release(){
-		
-		assert(m_refCount > 0);
-		
-		ULONG uCount = InterlockedDecrement(&m_refCount);
-		
-		if(uCount == 0){
-			delete this;
-		}
-		return uCount;
-	}
-};
-
-#define DEFINE_CLASSFACTORY_SERVER_LOCK  volatile long ClassFactory::m_serverLocks = 0;
+#define DEFINE_CLASSFACTORY_SERVER_LOCK volatile long ClassFactory::m_serverLocks = 0;
 
 #endif
