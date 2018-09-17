@@ -6,12 +6,6 @@
 
 typedef HRESULT (*CreateInstanceFn)(IUnknown*, REFIID, void**);
 
-struct ClassFactoryData{
-	
-	const GUID* pclsid;
-	CreateInstanceFn pfnCreate;
-};
-
 class ClassFactory : public IClassFactory{
 	
 private:
