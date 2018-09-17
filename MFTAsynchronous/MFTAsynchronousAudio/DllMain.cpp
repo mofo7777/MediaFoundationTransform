@@ -5,7 +5,7 @@
 
 HMODULE g_hModule;
 
-DEFINE_CLASSFACTORY_SERVER_LOCK;
+DEFINE_CLASSFACTORY_SERVER_LOCK
 
 ClassFactoryData g_ClassFactories[] = {{ &CLSID_MFTAsynchronousAudio, CMFTAsynchronousAudio::CreateInstance }};
 
