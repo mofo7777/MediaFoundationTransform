@@ -9,7 +9,7 @@ Some helper files used by differents projects.
 ### MFTAsynchronousAudio
 
 * MFTAsynchronous show minimal implementation for an asynchronous audio transform.
-* This MFT works with media session pipeline, and tranform wave PCM audio data to wave FLOAT data.
+* This MFT works with media session pipeline, and tranform wave PCM audio data to wave FLOAT audio data.
 * Does not show dynamic format change code handling.
 * Check shutdown status, even if documentation says :
 > The client must not use the MFT after calling Shutdown.
