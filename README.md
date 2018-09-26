@@ -8,7 +8,7 @@ Some helper files used by differents projects.
 
 ### MFTAsynchronousAudio
 
-* MFTAsynchronous show minimal implementation for an asynchronous audio transform.
+* MFTAsynchronousAudio show minimal implementation for an asynchronous audio transform.
 * This MFT works with media session pipeline, and tranform wave PCM audio data to wave FLOAT audio data.
 * Does not show dynamic format change code handling.
 * Check shutdown status, even if documentation says :
@@ -25,6 +25,12 @@ In progress.
 ## MFTDirectxAware
 
 ### MFTSimpleDirectxAware
+
+* MFTSimpleDirectxAware shows minimal implementation for a D3D aware video transform.
+* This MFT is MF_SA_D3D_AWARE, and handles stream format change (MFT_SUPPORT_DYNAMIC_FORMAT_CHANGE).
+* This MFT uses IMFVideoSampleAllocator to provide samples.
+* Only the MFVideoFormat_NV12 is handled.
+* Shows minimal use of IDirect3DDeviceManager9.
 
 ## MFTPlayer
 
