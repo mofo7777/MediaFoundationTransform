@@ -1,10 +1,10 @@
 # MediaFoundationTransform
 
-## MFTAsynchronous
-
-###  Common
+##  Common
 
 Some helper files used by differents projects.
+
+## MFTAsynchronous
 
 ### MFTAsynchronousAudio
 
@@ -22,6 +22,10 @@ Some helper files used by differents projects.
 
 In progress.
 
-### MFTAsynchronousPlayer
+## MFTDirectxAware
+
+### MFTSimpleDirectxAware
+
+## MFTPlayer
 
 In progress.
