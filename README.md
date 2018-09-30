@@ -36,8 +36,8 @@ In progress.
 
 * This MFT shows how to use IDirect3DDeviceManager9 to query IDirect3DDevice9 (IDirect3DDeviceManager9::LockDevice).
 * This MFT shows how to use Directx shader (ID3DXEffect) and text (ID3DXFont) with IDirect3DDevice9.
-* Also, shows how to provide uv coordinates in shader, to handle YUV video format with tex2D.
-* Using ID3DXFont to display text on an YUV format is not very correct in relation to color. It is just for the concept.
+* Also, shows how to provide uv coordinates in shader, to handle YUV video format correctly with tex2D.
+* Using ID3DXFont to display text on an YUV format is not very correct in relation to color. It is just for the concept. The text is scrolling.
 * MFTSimpleDirectxAware shows implementation for a D3D aware video transform.
 * This MFT is MF_SA_D3D_AWARE, and handles stream format change (MFT_SUPPORT_DYNAMIC_FORMAT_CHANGE).
 * Only the MFVideoFormat_NV12 is handled (evr requests only dxva2 compatible surfaces).
