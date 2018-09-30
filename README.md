@@ -43,6 +43,8 @@ In progress.
 * Only the MFVideoFormat_NV12 is handled (evr requests only dxva2 compatible surfaces).
 * Shows minimal use of IDirect3DDeviceManager9. It does not handle DXVA2_E_NEW_VIDEO_DEVICE on IDirect3DDeviceManager9::TestDevice.
 
+![Video Shader Effect](./Media/MFTVideoShaderEffect.jpg)
+
 ## MFTPlayer
 
 In progress.
