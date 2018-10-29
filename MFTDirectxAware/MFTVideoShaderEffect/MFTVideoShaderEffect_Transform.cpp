@@ -97,7 +97,7 @@ HRESULT CMFTVideoShaderEffect::GetAttributes(IMFAttributes** ppAttributes){
 	}
 	catch(HRESULT){}
 
-	//SAFE_RELEASE(pAttributes);
+	SAFE_RELEASE(pAttributes);
 
 	return hr;
 }
